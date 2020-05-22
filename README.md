@@ -23,7 +23,7 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|string|null: false|
+|message|string||
 |picture|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
