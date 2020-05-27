@@ -6,7 +6,7 @@
         = link_to "#" do
           = icon('far', 'edit', class: 'icon')
           %span<>
-        = link_to "#" do
+        = link_to edit_user_path(current_user.id) do
           = icon('fa', 'cog', class: 'icon')
   .side-bar__groupname
     .side-bar__groupname__boxes
