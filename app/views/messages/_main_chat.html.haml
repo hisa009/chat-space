@@ -1,0 +1,28 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__left-contents
+      %p.chat-main__header__left-contents__groupname test
+      %p.chat-main__header__left-contents__menber Menber: masa
+    .chat-main__header__right-contents
+      = link_to 'Edit', '#', class: 'chat-main__header__right-contents__edit'
+  .chat-main__main
+    .chat-main__main__contents
+      .chat-main__main__contents__user
+        %a.chat-main__main__contents__user__name fff
+        %a.chat-main__main__contents__user__date 2020/05/26(Tue) 14:43:26
+      .chat-main__main__contents__message
+        %a test
+    .chat-main__main__contents
+      .chat-main__main__contents__user
+        %a.chat-main__main__contents__user__name fff
+        %a.chat-main__main__contents__user__date 2020/05/26(Tue) 14:43:26
+      .chat-main__main__contents__message
+        %a test
+  .chat-main__type-message
+    = form_for '#' do |f|
+      .chat-main__type-message__form
+        = f.text_field :content, placeholder: 'type a message', class: 'chat-main__type-message__form__text'
+        %label
+          = icon('far', 'image', class: 'chat-main__type-message__form__icon')
+          = f.file_field :upload_file, class: 'chat-main__type-message__form__file'
+      = f.submit 'Send', class: 'chat-main__type-message__btn'
