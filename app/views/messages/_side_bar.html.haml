@@ -1,17 +1,19 @@
 .side-bar
   .side-bar__header
     .side-bar__header__center-box
-      = link_to "masa", "#", class: "username"
+      #a.username= current_user.name
       .side-bar__header__center-box__icons
         = link_to "#" do
           = icon('far', 'edit', class: 'icon')
           %span<>
-        = link_to "#" do
+        = link_to edit_user_path(current_user.id) do
           = icon('fa', 'cog', class: 'icon')
   .side-bar__groupname
     .side-bar__groupname__boxes
-      %p.side-bar__groupname__boxes__tag techcamp
-      %p.side-bar__groupname__boxes__message まだメッセージがありません
+      = link_to "#" do
+        %p.side-bar__groupname__boxes__tag techcamp
+        %p.side-bar__groupname__boxes__message まだメッセージがありません
     .side-bar__groupname__boxes
-      %p.side-bar__groupname__boxes__tag techcamp
-      %p.side-bar__groupname__boxes__message まだメッセージがありません
+      = link_to "#" do
+        %p.side-bar__groupname__boxes__tag techcamp
+        %p.side-bar__groupname__boxes__message まだメッセージがありません
