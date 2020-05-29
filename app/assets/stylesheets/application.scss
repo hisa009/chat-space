@@ -50,15 +50,24 @@ $WhiteColor: #ffffff;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     width: 300px;
-    &__boxes__tag {
-      font-size: 15px;
-      padding: 20px 20px 5px 20px;
-      color: $WhiteColor;
-    }
-    &__boxes__message {
-      font-size: 11px;
-      padding: 0 20px 40px;
-      color: $WhiteColor;
+    overflow-y: auto;
+    &__boxes{
+      height: 91px;
+      &__tag {
+        font-size: 15px;
+        padding: 20px 20px 5px 20px;
+        color: $WhiteColor;
+        display: block;
+        text-decoration: none;
+      }
+      &__message {
+        font-size: 11px;
+        padding: 0 20px 0;
+        color: $WhiteColor;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 40px;
+      }
     }
   }
 }
@@ -107,6 +116,7 @@ $WhiteColor: #ffffff;
     height: calc(100vh - 100px - 90px);
     width: calc(100vw - 300px);
     padding-top: 35px;
+    overflow-y: auto;
     &__contents {
       margin: 0 0 46px 40px;
       &__user{

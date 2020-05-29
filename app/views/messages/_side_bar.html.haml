@@ -9,8 +9,7 @@
         = link_to edit_user_path(current_user.id) do
           = icon('fa', 'cog', class: 'icon')
   .side-bar__groupname
-    .side-bar__groupname__boxes
-      - current_user.groups.each do |group|
-        = link_to "#" do
-          %p.side-bar__groupname__boxes__tag= group.name
-          %p.side-bar__groupname__boxes__message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side-bar__groupname__boxes
+        = link_to group.name, group_messages_path(group.id), class: "side-bar__groupname__boxes__tag"
+        = link_to group.show_last_message, group_messages_path(group.id), class: "side-bar__groupname__boxes__message"
