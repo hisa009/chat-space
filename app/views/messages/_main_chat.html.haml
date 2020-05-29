@@ -1,10 +1,12 @@
 .chat-main
   .chat-main__header
     .chat-main__header__left-contents
-      %p.chat-main__header__left-contents__groupname test
-      %p.chat-main__header__left-contents__menber= "Menber: #{current_user.name}"
+      %p.chat-main__header__left-contents__groupname= @group.name
+      %a.chat-main__header__left-contents__menber Menber:
+      - @group.users.each do |user|
+        %a.chat-main__header__left-contents__menber= user.name
     .chat-main__header__right-contents
-      = link_to 'Edit', '#', class: 'chat-main__header__right-contents__edit'
+      = link_to 'Edit', edit_group_path(@group.id) , class: 'chat-main__header__right-contents__edit'
 
   .chat-main__main
     - @messages.each do |message|
