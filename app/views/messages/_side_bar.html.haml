@@ -12,4 +12,4 @@
     - current_user.groups.each do |group|
       .side-bar__groupname__boxes
         = link_to group.name, group_messages_path(group.id), class: "side-bar__groupname__boxes__tag"
-        = link_to "まだメッセージがありません", group_messages_path(group.id), class: "side-bar__groupname__boxes__message"
+        = link_to group.show_last_message, group_messages_path(group.id), class: "side-bar__groupname__boxes__message"
