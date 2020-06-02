@@ -37,7 +37,6 @@ $(function(){
     return html;
   }
 
-
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     let formData = new FormData(this);
@@ -49,6 +48,14 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
+    })
+    .done(function(data){
+      console.log(data)
+      var html = buildHTML(data);
+      $('.chat-main__main').append(html);
+      $('.chat-main__main').animate({ scrollTop: $('.chat-main__main')[0].scrollHeight});
+      $('#new_message')[0].reset();
+      $('.chat-main__type-message__btn').prop('disabled', false);
     })
   })
 });
