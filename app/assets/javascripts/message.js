@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message) {
-    if (message.image) {
+    if (message.picture) {
       var html = `<div class="chat-main__main__contents">
                     <div class="chat-main__main__contents__user">
                       <a class="chat-main__main__contents__user__name"> 
