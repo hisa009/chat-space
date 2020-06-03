@@ -70,6 +70,9 @@ $WhiteColor: #ffffff;
       }
     }
   }
+  &__groupname::-webkit-scrollbar {
+    display:none;
+  }
 }
 
 .chat-main {
@@ -139,6 +142,9 @@ $WhiteColor: #ffffff;
         font-size: 14px;
       }
     }
+  }
+  &__main::-webkit-scrollbar {
+    display:none;
   }
   &__type-message {
     background-color: #d2d2d2;
