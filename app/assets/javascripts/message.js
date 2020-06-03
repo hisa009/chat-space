@@ -11,9 +11,9 @@ $(function(){
                       </a>
                     </div>
                     <div class="chat-main__main__contents__message">
-                      <a class="chat-main__main__contents__message__content">
+                      <p class="chat-main__main__contents__message__content">
                         ${message.text}
-                      </a>
+                      </p>
                       <img src="${message.picture}" class="chat-main__main__contents__message__image" >
                     </div>
                   </div>`
@@ -28,9 +28,9 @@ $(function(){
                       </a>
                     </div>
                     <div class="chat-main__main__contents__message">
-                      <a class="chat-main__main__contents__message__content">
+                      <p class="chat-main__main__contents__message__content">
                         ${message.text}
-                      </a>
+                      </p>
                     </div>
                   </div>`
     };
@@ -50,7 +50,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.chat-main__main').append(html);
       $('.chat-main__main').animate({ scrollTop: $('.chat-main__main')[0].scrollHeight});
