@@ -15,7 +15,7 @@
           %a.chat-main__main__contents__user__name= message.user.name
           %a.chat-main__main__contents__user__date= message.created_at.strftime("%Y年%m月%d日 %H時%M分")
         .chat-main__main__contents__message 
-          %a.chat-main__main__contents__message__content= message.text if message.text.present?
+          %p.chat-main__main__contents__message__content= message.text if message.text.present?
           = image_tag message.picture.url, class: "chat-main__main__contents__message__image" if message.picture.present?
   .chat-main__type-message
     = form_for [@group, @message] do |f|
