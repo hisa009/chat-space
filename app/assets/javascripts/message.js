@@ -1,5 +1,5 @@
 $(function(){
-  var reloadMessage = function() {
+  var reloadMessages = function() {
     var last_message_id = $('.chat-main__main__contents:last').data("message-id");
     $.ajax({
       url: "api/messages",
@@ -7,8 +7,15 @@ $(function(){
       dataType: 'json',
       data: {id: last_message_id}
     })
-    .done(function() {
-      console.log('success');
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.chat-main__main').append(insertHTML);
+        $('.chat-main__main').animate({ scrollTop: $('.chat-main__main')[0].scrollHeight});
+      }
     })
     .fail(function() {
       alert('error');
@@ -76,4 +83,5 @@ $(function(){
       $('.chat-main__type-message__btn').prop('disabled', false);
     });
   })
+  setInterval(reloadMessages, 7000);
 });
